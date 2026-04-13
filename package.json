@@ -1,17 +1,31 @@
 {
-  "name": "tarium",
+  "name": "tarium-music-player",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A cinematic, editorial music player with queue management and playback controls. Build with TypeScript and designed for seamless integration.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "tsc -p tsconfig.json && node --test --experimental-test-isolation=none dist/tests/DoublyLinkedList.test.js dist/tests/PlayerManager.test.js"
+    "test": "tsc -p tsconfig.json && node --test --experimental-test-isolation=none dist/tests/DoublyLinkedList.test.js dist/tests/PlayerManager.test.js",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SoFzzz/Tarium.git"
   },
-  "keywords": [],
+  "keywords": [
+    "music-player",
+    "typescript",
+    "player-manager",
+    "queue",
+    "playback",
+    "media-adapter"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -19,9 +33,12 @@
     "url": "https://github.com/SoFzzz/Tarium/issues"
   },
   "homepage": "https://github.com/SoFzzz/Tarium#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^25.6.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "use": "^3.1.1"
   }
 }
